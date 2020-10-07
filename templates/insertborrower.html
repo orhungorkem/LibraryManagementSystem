@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.tc.label(class="form-control-label") }}
+
+                {% if form.tc.errors %}
+                    {{ form.tc(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.tc.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.tc(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            
+    
+            
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+
+
+    <form method="POST" action="">
+        {{ form2.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form2.del_tc.label(class="form-control-label") }}
+
+                {% if form2.del_tc.errors %}
+                    {{ form2.del_tc(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form2.del_tc.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form2.del_tc(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            
+    
+            
+        </fieldset>
+        <div class="form-group">
+            {{ form2.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+
+</div>
+
+{%endblock%}

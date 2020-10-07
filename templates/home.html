@@ -1,0 +1,255 @@
+{% extends "layout.html" %}
+{% block content %}
+    
+<div class="container">
+    <div class="row">
+        <h2>Borrow</h2>
+    </div>
+    <br/>
+    
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="row">
+        <div class="col-sm-8">
+        <fieldset class="form-group">
+            <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                        <div class="row">
+                        <div class="col-sm-1">
+                        {{ form.tc.label(class="form-control-label") }}
+                    </div>
+                    <div class="col-sm">
+                        {% if form.tc.errors %}
+                            {{ form.tc(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.tc.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.tc(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            </div>
+                
+            </div>
+        </div>
+            <div class="col-sm">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                {{ form.isbn.label(class="form-control-label") }}
+                </div>
+                <div class="col-sm">
+                {% if form.isbn.errors %}
+                    {{ form.isbn(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.isbn.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.isbn(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            </div>
+            </div>
+        </div>
+            </fieldset>
+        </div>
+        <div class="col-sm-4">
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </div>
+    </form>
+
+</div>
+</div>
+<div class="container">
+<div class="row">
+    <h2>Return</h2>
+</div>
+<br/>
+
+<form method="POST" action="">
+    {{ form5.hidden_tag() }}
+    <div class="row">
+    <div class="col-sm-8">
+    <fieldset class="form-group">
+        <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                    <div class="row">
+                    <div class="col-sm-1">
+                    {{ form5.tcd.label(class="form-control-label") }}
+                </div>
+                <div class="col-sm">
+                    {% if form5.tcd.errors %}
+                        {{ form5.tcd(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form5.tcd.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form5.tcd(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        </div>
+            
+        </div>
+    </div>
+        <div class="col-sm">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+            {{ form5.isbnd.label(class="form-control-label") }}
+            </div>
+            <div class="col-sm">
+            {% if form5.isbnd.errors %}
+                {{ form5.isbnd(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form5.isbnd.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form5.isbnd(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        </div>
+        </div>
+    </div>
+        </fieldset>
+    </div>
+    <div class="col-sm-4">
+    <div class="form-group">
+        {{ form5.submit(class="btn btn-outline-info") }}
+    </div>
+</div>
+</form>
+</div>
+
+
+</div>
+</div>
+
+    
+        <div class="row">
+            <h2>Search</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+            <form method="POST" action="">
+                {{ form2.hidden_tag() }}
+                <fieldset class="form-group">
+                    
+                    <div class="form-group">
+                        {{ form2.isbn.label(class="form-control-label") }}
+                        {% if form2.isbn.errors %}
+                            {{ form2.isbn(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form2.isbn.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form2.isbn(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    
+                </fieldset>
+                <div class="form-group">
+                    {{ form2.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+            </div>
+            <div class="col-sm">
+            <form method="POST" action="">
+                {{ form3.hidden_tag() }}
+                <fieldset class="form-group">
+                    
+                    <div class="form-group">
+                        {{ form3.title.label(class="form-control-label") }}
+                        {% if form3.title.errors %}
+                            {{ form3.title(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form3.title.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form3.title(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    
+                </fieldset>
+                <div class="form-group">
+                    {{ form3.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+            </div>
+
+            <div class="col-sm">
+            <form method="POST" action="">
+                {{ form4.hidden_tag() }}
+                <fieldset class="form-group">
+                    
+                    <div class="form-group">
+                        {{ form4.author.label(class="form-control-label") }}
+                        {% if form4.author.errors %}
+                            {{ form4.author(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form4.author.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form4.author(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    
+                </fieldset>
+                <div class="form-group">
+                    {{ form4.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+            </div>
+        </div>
+    
+    
+    <br/>
+
+   
+        <div class="row">
+            <h2>Books</h2>
+        </div>
+    
+    <br/>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ISBN</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Due</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for book in books%}      
+            <tr>
+                <td>{{book.isbn}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.due}}</td>
+            
+              </tr>
+            {%endfor%}
+            
+        </tbody>
+    </table>
+
+{%endblock%}
+    
